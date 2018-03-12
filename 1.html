@@ -18,7 +18,17 @@
           return fib(n-1) + fib(n-2);
       }
     //   console.log(fib(5));
- 
+      
+    // 把一个字符串中所有的 : 到 . 的子串解析出来并且存放到一个数组当中
+    const extractStr = (str) => {
+     let reg = /\:([^\.\:]*)\./g;
+     let matchArr = str.match(reg) === null ? [] : str.match(reg) ;
+     let result = matchArr.map((el) => {
+        return el.slice(1, -1);
+    });
+    return result;
+    }
+    // console.log(extractStr('abcd:ef.g:aa.'));
         
     </script>
 </body>
